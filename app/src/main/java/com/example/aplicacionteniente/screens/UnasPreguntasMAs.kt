@@ -60,7 +60,10 @@ fun UnasPreguntasMas(navController: NavController) {
     var mExpanded by remember { mutableStateOf(false) }
     var mExpanded2 by remember { mutableStateOf(false) }
     // Create a list of cities
-    val mCities = listOf("Delhi", "Mumbai", "Chennai", "Kolkata", "Hyderabad", "Bengaluru", "Pune")
+    val mCities = listOf("GENERAL", "MAYOR GENERAL", "BRIGADIER GENERAL", "CORONEL", "TENIENTE CORONEL", "MAYOR", "CAPITAN", "TENIENTE",
+                         "SUBTENIENTE", "COMISARIO","SUBCOMISARIO", "INTENDENTE JEFE", "INTENDENTE", "SUBINTENDENTE", "PATRULLERO", "SARGENTO MAYOR",
+                        "AGENTES", "ALFEREZ", "CADETES", "ALUMNOS", "AUXILIARES DE POLICIA"
+                        )
     val validacion = listOf("SI", "NO")
     // Create a string value to store the selected city
     var mSelectedText by remember { mutableStateOf("") }
