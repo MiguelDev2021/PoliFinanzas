@@ -2,6 +2,7 @@ plugins {
     id 'com.android.application'
     id 'org.jetbrains.kotlin.android'
     id 'kotlin-kapt'
+    id "dagger.hilt.android.plugin"
 
 }
 
@@ -10,7 +11,7 @@ android {
 
     defaultConfig {
         applicationId "com.example.aplicacionteniente"
-        minSdk 21
+        minSdk 26
         targetSdk 32
         versionCode 1
         versionName "1.0"
@@ -58,6 +59,7 @@ dependencies {
     implementation 'androidx.activity:activity-compose:1.3.1'
     implementation 'com.sun.mail:android-mail:1.6.0'
     implementation 'com.sun.mail:android-activation:1.6.0'
+    implementation 'com.google.android.datatransport:transport-runtime:3.0.1'
     testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test.ext:junit:1.1.3'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
@@ -67,31 +69,24 @@ dependencies {
 
 
 
-    implementation("androidx.room:room-runtime:2.4.2")
-    annotationProcessor("androidx.room:room-compiler:2.4.2")
+    implementation "androidx.room:room-runtime:2.4.2"
+    kapt "androidx.room:room-compiler:2.4.2"
+    implementation "androidx.room:room-ktx:2.4.2"
+    implementation "androidx.room:room-paging:2.4.2"
 
-    // To use Kotlin annotation processing tool (kapt)
-    kapt("androidx.room:room-compiler:2.4.2")
-    // To use Kotlin Symbolic Processing (KSP)
+// Paging 3.0
+    implementation 'androidx.paging:paging-compose:1.0.0-alpha15'
 
 
-    // optional - Kotlin Extensions and Coroutines support for Room
-    implementation("androidx.room:room-ktx:2.4.2")
 
-    // optional - RxJava2 support for Room
-    implementation("androidx.room:room-rxjava2:2.4.2")
+    //  Hilt
+    implementation 'androidx.hilt:hilt-navigation-compose:1.0.0-beta01'
+    implementation "com.google.dagger:hilt-android:2.38.1"
+    kapt "com.google.dagger:hilt-compiler:2.38.1"
 
-    // optional - RxJava3 support for Room
-    implementation("androidx.room:room-rxjava3:2.4.2")
+    androidTestImplementation 'com.google.dagger:hilt-android-testing:2.38.1'
+    kaptAndroidTest 'com.google.dagger:hilt-compiler:2.38.1'
 
-    // optional - Guava support for Room, including Optional and ListenableFuture
-    implementation("androidx.room:room-guava:2.4.2")
-
-    // optional - Test helpers
-    testImplementation("androidx.room:room-testing:2.4.2")
-
-    // optional - Paging 3 Integration
-    implementation("androidx.room:room-paging:2.5.0-alpha02")
-
+    //
 
 }

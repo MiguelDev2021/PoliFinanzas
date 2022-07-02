@@ -27,9 +27,9 @@ import com.example.aplicacionteniente.backendscreens.validacioniguales
 
 
 @Composable
-fun PresentacionScreen(navController: NavController, correo: String?, codigo : String?){
+fun PresentacionScreen(navController: NavController, correo: String?, codigo : String?, contraseña : String?){
     Scaffold() {
-        Presentacionelements(correo , codigo, navController)
+        Presentacionelements(correo , codigo, contraseña , navController)
     }
 
 
@@ -74,9 +74,10 @@ fun PresentacionScreen(navController: NavController, correo: String?, codigo : S
 
 
 @Composable
-fun Presentacionelements(correo: String?, codigo: String?, navController: NavController){
+fun Presentacionelements(correo: String?, codigo: String?,contraseña: String? ,navController: NavController){
     var correoRecibido : String = ""
     var CodigoRecibido :  String = ""
+    var contraseña :  String = ""
     correo?.let {
         correoRecibido = correo
     }

@@ -7,27 +7,22 @@ import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.material.*
 import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.filled.ArrowBack
 import androidx.compose.material.icons.filled.KeyboardArrowDown
 import androidx.compose.material.icons.filled.KeyboardArrowUp
-import androidx.compose.material.icons.filled.MoreVert
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.geometry.CornerRadius.Companion.Zero
+import androidx.compose.ui.geometry.Size
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.input.key.Key.Companion.Zero
 import androidx.compose.ui.layout.onGloballyPositioned
 import androidx.compose.ui.platform.LocalDensity
 import androidx.compose.ui.text.input.KeyboardType
-import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import androidx.compose.ui.geometry.Size
 import androidx.compose.ui.unit.toSize
+import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.NavController
-import com.example.aplicacionteniente.LetreroEnvioCodigo
-import com.example.aplicacionteniente.backendscreens.validacioniguales
-
+import com.example.aplicacionteniente.data.UserViewModel
+import androidx.hilt.navigation.compose.hiltViewModel
 
 
 @Composable
@@ -52,7 +47,7 @@ fun LetreroOrdenPublico(){
 
 
 @Composable
-fun UnasPreguntasMas(navController: NavController) {
+fun UnasPreguntasMas(navController: NavController, viewModel: UserViewModel = hiltViewModel()) {
 
 
     //variables para el menu despegable de rango Actual y Prima de orden Publico
@@ -92,6 +87,10 @@ fun UnasPreguntasMas(navController: NavController) {
     ) {
         var Nombre by remember { mutableStateOf("") }
         var advertencia by remember { mutableStateOf("") }
+
+
+
+
 
         Column(
             modifier = Modifier

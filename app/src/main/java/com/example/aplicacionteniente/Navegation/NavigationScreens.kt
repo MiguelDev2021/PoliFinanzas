@@ -29,18 +29,23 @@ fun AppNavegation(){
         composable(route = RouteScreens.Login.route){
             LoginScreen(navController)
         }
-        composable(route = RouteScreens.UnasPreguntasMas.route){
+        composable(route = RouteScreens.UnasPreguntasMas.route + "/{correo}/{contraseña}"){
             UnasPreguntasMas(navController)
         }
 
-        composable(route = RouteScreens.Presentacion.route + "/{correo}/{codigo}",
+        composable(route = RouteScreens.Presentacion.route + "/{correo}/{codigo}/{contraseña}",
             arguments = listOf(
                 navArgument(name = "correo"){
                     type = NavType.StringType
                 },
                  navArgument(name = "codigo"){
                      type  = NavType.StringType
-                 }
+                 },
+
+                navArgument(name = "contraseña"){
+                    type = NavType.StringType
+
+                }
 
 
             )
@@ -49,6 +54,7 @@ fun AppNavegation(){
             PresentacionScreen(navController,
                 it.arguments?.getString("correo"),
                 it.arguments?.getString("codigo"),
+                it.arguments?.getString("contraseña")
                 )
         }
 

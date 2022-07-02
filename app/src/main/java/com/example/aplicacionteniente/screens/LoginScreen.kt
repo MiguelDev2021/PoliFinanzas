@@ -234,7 +234,7 @@ fun PartsView(navController: NavController) {
                         codigo = Codigo()
                         //enviar Correo para verificar si el numero es correcto
                         enviarCorreosgmail(codigo, usuario)
-                        navController.navigate(route = RouteScreens.Presentacion.route + "/$usuario/$codigo")
+                        navController.navigate(route = RouteScreens.Presentacion.route + "/$usuario/$codigo/$contraseña")
 
                     }
 
